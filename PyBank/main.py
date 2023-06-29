@@ -1,7 +1,7 @@
 import os
 import csv
 
-csvpath = os.path.join("/Users/sergioescobedo/Desktop/python-challenge/python challenge/PyBank/Resources/budget_data.csv")
+csvpath = os.path.join("/Users/sergioescobedo/Desktop/python-challenge/PyBank/Resources/budget_data.csv")
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
@@ -40,20 +40,20 @@ with open(csvpath) as csvfile:
 
     average_change /= (months_count - 1)
 
-    with open("/Users/sergioescobedo/Desktop/python-challenge/python challenge/PyBank/Analysis/my_file", "a+") as my_file:
-        my_file.write("Financial Analysis\n")
-        my_file.write("-------------------------------\n")
-        my_file.write(f"Total amount in the second column: {total_amount}\n")
-        my_file.write(f"Total count of months: {months_count}\n")
-        my_file.write(f"Average change between rows: {average_change}\n")
-        my_file.write(f"Greatest increase: {greatest_increase} ({greatest_increase_month})\n")
-        my_file.write(f"Greatest decrease: {greatest_decrease} ({greatest_decrease_month})\n")
+with open(os.path.join("/Users/sergioescobedo/Desktop/python-challenge/PyBank/Analysis","analysis.txt" ), "a+") as my_file:
+    my_file.write("Financial Analysis\n")
+    my_file.write("-------------------------------\n")
+    my_file.write(f"Total amount: {total_amount}\n")
+    my_file.write(f"Total months: {months_count}\n")
+    my_file.write(f"Average change: {average_change}\n")
+    my_file.write(f"Greatest increase: {greatest_increase} ({greatest_increase_month})\n")
+    my_file.write(f"Greatest decrease: {greatest_decrease} ({greatest_decrease_month})\n")
 
     print("Financial Analysis\n")
     print("-------------------------------")
-    print(f"Total amount in the second column: {total_amount}")
-    print(f"Total count of months: {months_count}")
-    print(f"Average change between rows: {average_change}")
+    print(f"Total amount: {total_amount}")
+    print(f"Total months: {months_count}")
+    print(f"Average change: {average_change}")
     print(f"Greatest increase: {greatest_increase} ({greatest_increase_month})")
     print(f"Greatest decrease: {greatest_decrease} ({greatest_decrease_month})")
  
